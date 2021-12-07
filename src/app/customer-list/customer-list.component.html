@@ -1,0 +1,26 @@
+<p>customer-list works!</p>
+<ul>
+    <li *ngFor="let i of customerListFromParent; ">
+        <a>{{i}}</a>
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let i of customerExampleList; ">
+        <a>{{i.customerName}}</a>
+        <a>{{i.customerID}}</a>
+    </li>
+</ul>
+<table >
+    <tr><th>Name</th><th>ID</th><th>Address</th><th>PhoneNo</th><th>UPDATE</th><th>DELETE</th></tr>
+    <tr *ngFor="let i of customerExampleList;">
+        <td>{{i.customerName}}</td><td>{{i.customerID}}</td><td>{{i.customerAddress}}</td><td>{{i.customerPhone}}</td><td><a href="">Edit</a></td><td><a href="">delete</a></td></tr>
+</table>
+
+<button (click)="increment()">Increment</button>
+
+<button (click)="decrement()">Decrement</button>
+
+<h1>{{count}}</h1>
+ <button (click)="append()">APPEND</button>
+<h1>{{word}}</h1>

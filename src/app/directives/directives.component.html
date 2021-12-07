@@ -1,0 +1,23 @@
+<div *ngIf="loggedIn; else loggedOut"> 
+    Hello you are logged in 
+ </div>
+ <ng-template #loggedOut> 
+    You're logged out.. 
+ </ng-template>
+
+
+ <ul [ngSwitch]="logInName"> 
+   <li *ngSwitchCase="'user'"> 
+      <p>User is logged in..</p> 
+   </li> 
+   <li *ngSwitchCase="'admin'"> 
+      <p>admin is logged in</p> 
+   </li> 
+   <li *ngSwitchCase = "'devi'">
+    <p>Hi Devi</p>
+</li>
+   <li *ngSwitchDefault> 
+      <p>Please choose login name</p> 
+   </li> 
+</ul>
+

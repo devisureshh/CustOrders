@@ -1,0 +1,52 @@
+<div>
+    <p> current date is {{presentDate | date}}</p>
+</div>
+<div>
+    <p> short date is {{presentDate | date: 'shortDate'}}</p>
+</div>
+<div>
+    <p> Full date is {{presentDate | date: 'fullDate'}}</p>
+</div>
+<div>
+    <p> formatted date is {{presentDate | date: 'M/dd/yyyy'}}</p>
+</div>
+<div>
+    <p> Hours and minutes is {{presentDate | date: 'h:mm'}}</p>
+</div>
+<div>
+    <p> Date with UpperCase is {{presentDate | date: 'fullDate' | uppercase}}</p>
+</div>
+<div>
+    <p> Date with LowerCase is {{presentDate | date: 'fullDate' | lowercase}}</p>
+</div>
+<div>
+    <p>Time in seconds is {{timeChange | async}}</p>
+</div>
+<div>
+    <p>Currency  {{price | currency : 'EUR'}}</p>
+</div>
+<div>
+    <p>Currency  {{price | currency : 'INR'}}</p>
+</div>
+<div>
+    <p>Start Index: {{customerList | slice: 2}}</p>
+    <p>Start Index and end index: {{customerList | slice: 1:4}}</p>
+    <p>Start Index and end index: {{customerList | slice:-2}}</p>
+    <p>Start Index and end index: {{customerList | slice: -4:-2}}</p>
+</div>
+<div>
+    <p>
+Decimal Pipe: {{decimalOne | number:'5.5'}}
+</p>
+</div>
+<div>
+    <p>
+Json Data: {{jsonData |json}}
+</p>
+</div>
+<div><p>
+    Digit: {{digit|digitCount }}
+</p></div>
+
+
+

@@ -1,3 +1,10 @@
-<p>You have successfully logged in </p>
+<nav class="navbar navbar-expand navbar-dark bg-dark" >
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        //<a class="nav-item nav-link" routerLink="/" *ngIf="isAdmin">Admin</a>
+       // <a class="nav-item nav-link" routerLink="/logout">Logout</a>
+    </div>
+</nav>
+<p>You have successfully logged in {{userFromLogin}}</p>
 
 <app-logout></app-logout>

@@ -3,7 +3,7 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 //import { CustomvalidationService } from '../services/customvalidation.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
-
+import { User } from '../user';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,10 +16,11 @@ export class LoginComponent implements OnInit {
   submitted = false;
 
   constructor(
+    // private userRoles: User,
     private fb: FormBuilder,
     private router: ActivatedRoute,
     private route: Router,
-    private loginService: AuthService
+    private loginService: AuthService,
   ) { }
 
   ngOnInit() {
@@ -44,11 +45,26 @@ export class LoginComponent implements OnInit {
 //   }
 username!:string;
 password!:string;
+public users: User[]=[
+  new User('admin','admin','admin'),
+  new User('user','user','user')
+];
   onClickSubmit(data: any){
+    this.submitted=true;
 this.username=data.email;
 this.password=data.password;
+var getUserRole=this.users;
+var currentUser=getUserRole.find(x=>x.username==data.email);
 this.loginService.login(this.username,this.password);
-this.route.navigate(['/successful']);
+if(currentUser?.role=='admin')
+{
+  this.route.navigate(['/successful']);
+
+}
+else{
+  this.route.navigate(['/normalUser']);
+}
+//let users: any = localStorage.setItem('admin','user');
 
   }
 }

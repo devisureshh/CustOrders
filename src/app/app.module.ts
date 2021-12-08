@@ -18,7 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { SuccessfulComponent } from './successful/successful.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LogoutComponent } from './logout/logout.component';
-
+import { User } from './user';
+import { NormalUserComponent } from './normal-user/normal-user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LogoutComponent } from './logout/logout.component';
     BgvComponent,
     LoginComponent,
     SuccessfulComponent,
-    LogoutComponent
+    LogoutComponent,
+    NormalUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,10 +44,9 @@ import { LogoutComponent } from './logout/logout.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatMenuModule,
-    AppRoutingModule
-
+    AppRoutingModule,
   ],
-  providers: [],
+  providers: [  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CustOrders';
+  userFromLogin : any = localStorage.getItem('localRole');
+ isAdmin():boolean{
+    if(this.userFromLogin=='admin')
+    {
+      return true;
+    }
+    return false;
+ }
 }
